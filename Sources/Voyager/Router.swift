@@ -1,7 +1,6 @@
 import Foundation
 
 public class Router<T: Route>: ObservableObject {
-    
     // MARK: -
     
     @Published var root: T
@@ -14,6 +13,10 @@ public class Router<T: Route>: ObservableObject {
     var deeplinkHandler: DeeplinkHandler<T>?
     
     // MARK: - Initializer
+
+    public convenience init(root: () -> T, deeplinkHandler: DeeplinkHandler<T>? = nil) {
+        self.init(root: root(), deeplinkHandler: deeplinkHandler)
+    }
     
     public init(root: T, deeplinkHandler: DeeplinkHandler<T>? = nil) {
         self.root = root

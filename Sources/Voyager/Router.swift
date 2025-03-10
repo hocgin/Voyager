@@ -3,7 +3,7 @@ import Foundation
 public class Router<T: Route>: ObservableObject {
     // MARK: -
     
-    @Published var root: T
+    @Published public var root: T
     @Published var routes: [T]
     @Published var sheet: T?
     @Published var fullscreenCover: T?

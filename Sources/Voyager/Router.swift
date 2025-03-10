@@ -14,7 +14,7 @@ public class Router<T: Route>: ObservableObject {
     
     // MARK: - Initializer
 
-    public convenience init(root: () -> T, deeplinkHandler: DeeplinkHandler<T>? = nil) {
+    public convenience init(root: @escaping () -> T, deeplinkHandler: DeeplinkHandler<T>? = nil) {
         self.init(root: root(), deeplinkHandler: deeplinkHandler)
     }
     
